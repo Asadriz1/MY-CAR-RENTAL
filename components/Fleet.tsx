@@ -12,14 +12,14 @@ export default function Fleet() {
     { name: 'Ferrari F8 Tributo', imgSrc: '/images/ferrari.png', price: '$2,200/day' },
     { name: 'Porsche 911 Carrera', imgSrc: '/images/911.png', price: '$1,800/day' },
     { name: 'McLaren 720S', imgSrc: '/images/mclaren.png', price: '$2,300/day' },
-    { name: 'Aston Martin DB11', imgSrc: '/images/aston.png', price: '$1,950/day' },
-    { name: 'Rolls-Royce Dawn', imgSrc: '/images/rolls.png', price: '$3,000/day' },
-    { name: 'Bentley Continental', imgSrc: '/images/bentley.png', price: '$2,400/day' },
+    { name: 'Aston Martin DB11', imgSrc: '/images/fleet/aston.png', price: '$1,950/day' },
+    { name: 'Rolls-Royce Dawn', imgSrc: '/images/fleet/rolls.png', price: '$3,000/day' },
+    { name: 'Bentley Continental', imgSrc: '/images/fleet/bentley.png', price: '$2,400/day' },
     { name: 'Chevrolet Corvette', imgSrc: '/images/corvette.png', price: '$1,200/day' },
-    { name: 'BMW M8', imgSrc: '/images/bmw.png', price: '$1,650/day' },
-    { name: 'Mercedes-AMG GT', imgSrc: '/images/amg.png', price: '$2,100/day' },
-    { name: 'Audi R8', imgSrc: '/images/audi.png', price: '$2,000/day' },
-    { name: 'Jaguar F-Type', imgSrc: '/images/jaguar.png', price: '$1,700/day' },
+    { name: 'BMW M8', imgSrc: '/images/fleet/bmw.png', price: '$1,650/day' },
+    { name: 'Mercedes-AMG GT', imgSrc: '/images/fleet/amg.png', price: '$2,100/day' },
+    { name: 'Audi R8', imgSrc: '/images/fleet/audi.png', price: '$2,000/day' },
+    { name: 'Jaguar F-Type', imgSrc: '/images/fleet/jaguar.png', price: '$1,700/day' },
   ];
   return (
     <section id="fleet" className="py-20 bg-gray-100 px-4">

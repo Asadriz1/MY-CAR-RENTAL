@@ -1,13 +1,21 @@
-import Navbar from '../components/Navbar';
-import Hero from '../components/Hero';
-import Services from '../components/Services';
-import Testimonials from '../components/Testimonials';
-import Cta from '../components/Cta';
-import Blog from '../components/Blog';
-import Footer from '../components/Footer';
-import Fleet from '@/components/Fleet';
-import IntroSection from '@/components/IntroSection';
-import Collection from '@/components/Collection';
+// pages/index.tsx
+import { GetStaticProps } from 'next';
+import dynamic from 'next/dynamic';
+import Navbar from '@/components/Navbar';
+import Hero from '@/components/Hero';
+import Footer from '@/components/Footer';
+
+// Dynamically load sections after the hero
+const IntroSection = dynamic(() => import('@/components/IntroSection'), { ssr: false });
+const Collection   = dynamic(() => import('@/components/Collection'),   { ssr: false });
+const Fleet        = dynamic(() => import('@/components/Fleet'),        { ssr: false });
+const Services     = dynamic(() => import('@/components/Services'),     { ssr: false });
+const Testimonials = dynamic(() => import('@/components/Testimonials'), { ssr: false });
+const Cta          = dynamic(() => import('@/components/Cta'),          { ssr: false });
+
+export const getStaticProps: GetStaticProps = async () => {
+  return { props: {} };
+};
 
 export default function Home() {
   return (
@@ -21,7 +29,6 @@ export default function Home() {
         <Services />
         <Testimonials />
         <Cta />
-        <Blog />
       </main>
       <Footer />
     </div>

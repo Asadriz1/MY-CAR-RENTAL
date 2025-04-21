@@ -1,6 +1,12 @@
-// components/Collection.tsx
 import React from 'react';
-import { FiSend } from 'react-icons/fi';
+import Image from 'next/image';
+import dynamic from 'next/dynamic';
+
+// Dynamically import the send icon for reduced bundle size
+const FiSend = dynamic(
+  () => import('react-icons/fi').then((mod) => mod.FiSend),
+  { ssr: false }
+);
 
 const cars = [
   { title: 'Porsche', subtitle: 'German Sports Car', imgSrc: '/images/ban1.png' },
@@ -29,12 +35,23 @@ export default function Collection() {
           <button className="px-6 py-2 font-semibold">Special Offers</button>
         </div>
       </div>
+
       <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
         {cars.map((car, idx) => (
           <div key={idx} className="bg-white rounded-lg shadow-lg overflow-hidden">
-            <img src={car.imgSrc} alt={car.title} className="w-full h-48 object-cover rounded-t-lg" />
+            <div className="relative h-48 w-full">
+              <Image
+                src={car.imgSrc}
+                alt={car.title}
+                fill
+                className="object-cover rounded-t-lg"
+                loading="lazy"
+              />
+            </div>
             <div className="p-4 text-center">
-              <h3 className="font-semibold text-lg mb-1 inline-block border-b-2 border-black pb-1">{car.title}</h3>
+              <h3 className="font-semibold text-lg mb-1 inline-block border-b-2 border-black pb-1">
+                {car.title}
+              </h3>
               <p className="text-gray-500 text-sm">{car.subtitle}</p>
             </div>
           </div>
